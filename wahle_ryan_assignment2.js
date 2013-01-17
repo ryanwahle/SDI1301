@@ -13,10 +13,33 @@ var coworkerNames = ["Jeff", "Sarah", "Jimbob", "Mark"];
 // Procedure
 var securityDesk = function(name) {
 	if (name == "James") {
-		console.log("Hey James! Good morning! Did you have a good weekend?");
+		console.log("Security: Hey James! Good morning! I hope you had a good weekend!");
 	} else {
-		console.log("Good Morning! Have a great day today!");
+		console.log("Security: Good Morning! Have a great day today!");
 	}
 }
 
+// Boolean Function
+var isCoworkerCool = function(coworker1, coworker2) {
+	if ( (coworker1 == "James" && coworker2 == "Jeff") || (coworker1 == "Jeff" && coworker2 == "James") ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+// Walks into building
+console.log(theLateGuysName + " walks into the building and shows his badge to the guard.");
 securityDesk(theLateGuysName);
+
+// See's first coworker
+console.log(theLateGuysName + " walks past security and runs into " + coworkerNames[0] + ".");
+var myReturn = isCoworkerCool(theLateGuysName, coworkerNames[0]);
+
+if (myReturn == true) {
+	console.log(coworkerNames[0] + " gives you the nod and ignores the fact you are late, since you two are friends.");
+} else {
+	console.log("Too bad " + coworkerNames[0] + " hates you and you watch as they walk to the bosses office and rat you out!");
+}
+
+
