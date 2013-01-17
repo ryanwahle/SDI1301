@@ -28,6 +28,18 @@ var isCoworkerCool = function(coworker1, coworker2) {
 	}
 }
 
+// Number Function
+var goodMorningYells = function(numberOfCoworkers) {
+	var numberOfGoodmornings = 0;
+
+	while (numberOfGoodmornings < numberOfCoworkers) {
+		numberOfGoodmornings = numberOfGoodmornings + 1;
+		console.log("Good Morning!");
+	}
+
+	return numberOfGoodmornings;
+}
+
 // Walks into building
 console.log(theLateGuysName + " walks into the building and shows his badge to the guard.");
 securityDesk(theLateGuysName);
@@ -42,4 +54,6 @@ if (myReturn == true) {
 	console.log("Too bad " + coworkerNames[0] + " hates you and you watch as they walk to the bosses office and rat you out!");
 }
 
-
+// Good morning!
+var numberOfGoodMornings = goodMorningYells(coworkerNames.length);
+console.log("Oh great! Just what you need! " + numberOfGoodMornings + " people telling you Good Morning as your late!!");
