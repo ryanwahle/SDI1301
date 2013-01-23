@@ -50,6 +50,12 @@ var setupCoworkersObject = function (json) {
 		return this.name;
 	}
 
+	// Method: Mutator
+	var setRank = function (numNewRank) {
+		if (numNewRank >= 1 && numNewRank <= 5) {
+			this.ranking = numNewRank;
+		}	
+	}
 	
 	// Setup Object
 	for (var i = 0; i < json.workers.length; i++) {
@@ -64,7 +70,8 @@ var setupCoworkersObject = function (json) {
 			"printDaysWorked": printDaysWorked,
 			"doesWorkThisDay": doesWorkThisDay,
 
-			"getName"	 : getName
+			"getName"	 : getName,
+			"setRank"	 : setRank
 		};
 
 		tempCoworkerInfo.push(tempObject);	
@@ -80,4 +87,11 @@ coworkerInformation = setupCoworkersObject(json);
 // Does coworker work this day? 
 console.log(coworkerInformation[1].doesWorkThisDay("Thursday"));
 
+// Get the name
 console.log("Name: " + coworkerInformation[1].getName());
+
+// Set new rank
+console.log("Old Rank: " + coworkerInformation[1].ranking);
+coworkerInformation[1].setRank(20);
+console.log("New Rank: " + coworkerInformation[1].ranking);
+
