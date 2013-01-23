@@ -1,7 +1,7 @@
 // Ryan Wahle
 // SDI 1301
-// January 16, 2013
-// Project 2
+// January 23, 2013
+// Project 3
 // Sneaking into Work Late
 
 // Setup some variables
