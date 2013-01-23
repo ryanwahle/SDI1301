@@ -100,6 +100,17 @@ var setupCoworkersObject = function (json) {
 	return tempCoworkerInfo;
 };
 
+// Get names of all workers
+var getAllNames = function (coworkerArray) {
+	var tempNamesArray = [];
+
+	for (var i = 0; i < coworkerArray.length; i++) {
+		tempNamesArray.push(coworkerArray[i].getName());		
+	}
+
+	return tempNamesArray;
+}
+
 // Call function to setup coworker objects
 coworkerInformation = setupCoworkersObject(json);
 
@@ -119,3 +130,6 @@ coworkerInformation[1].setIsHappy(true);
 
 // Number of days worked
 console.log("Number days worked this week: " + coworkerInformation[1].numberOfDaysWorked());
+
+// Print out all the names in the array
+console.log("Names: " + getAllNames(coworkerInformation));
