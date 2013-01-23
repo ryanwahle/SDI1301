@@ -9,27 +9,32 @@ var json = {
 		{
 			"name": "John",
 			"ranking" : 5,
-			"workdays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+			"workdays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+			"isHappy": false
 		},
 		{
 			"name": "Micah",
 			"ranking" : 4,
-			"workdays": ["Wednesday", "Thursday", "Friday"]
+			"workdays": ["Wednesday", "Thursday", "Friday"],
+			"isHappy": true 
 		},
 		{
 			"name": "Jeff",
 			"ranking" : 3,
-			"workdays": ["Monday", "Thursday", "Friday"]
+			"workdays": ["Monday", "Thursday", "Friday"],
+			"isHappy": true	
 		},
 		{
 			"name": "Sam",
 			"ranking" : 2,
-			"workdays": ["Tuesday", "Wednesday", "Friday"]
+			"workdays": ["Tuesday", "Wednesday", "Friday"],
+			"isHappy": true
 		},
 		{
 			"name": "Rick",
 			"ranking" : 1,
-			"workdays": ["Thursday"]
+			"workdays": ["Thursday"],
+			"isHappy": false
 		}
 	]
 };
