@@ -13,6 +13,7 @@ var coworkerInformation = [];
 var setupCoworkersObject = function (json) {
 	var tempCoworkerInfo = [];
 
+	// Method: Procedure
 	var printDaysWorked = function () {
 		var days = this.workdays;
 		var string = "";
@@ -26,6 +27,7 @@ var setupCoworkersObject = function (json) {
 		console.log(string);
 	};
 
+	// Method: Function
 	var doesWorkThisDay = function (stringDay) {
 		for (var i = 0; i < this.workdays.length; i++) {
 			// First verify this is a work day
@@ -36,16 +38,20 @@ var setupCoworkersObject = function (json) {
 				// Yes it is a work day!
 				if (stringDay == this.workdays[i]) {
 					return true;
-				} else {
-					return false;
 				}
-			} else {
-				return false;	
 			}
 		}
+
+		return false;
 	};
 
+	// Method: Accessor
+	var getName = function () {
+		return this.name;
+	}
 
+	
+	// Setup Object
 	for (var i = 0; i < json.workers.length; i++) {
 		var worker = json.workers[i];
 
@@ -56,7 +62,9 @@ var setupCoworkersObject = function (json) {
 			"isHappy" : worker.isHappy,
 
 			"printDaysWorked": printDaysWorked,
-			"doesWorkThisDay": doesWorkThisDay
+			"doesWorkThisDay": doesWorkThisDay,
+
+			"getName"	 : getName
 		};
 
 		tempCoworkerInfo.push(tempObject);	
@@ -70,5 +78,6 @@ var setupCoworkersObject = function (json) {
 coworkerInformation = setupCoworkersObject(json);
 
 // Does coworker work this day? 
-console.log(coworkerInformation[1].doesWorkThisDay("Wednesday"));
+console.log(coworkerInformation[1].doesWorkThisDay("Thursday"));
 
+console.log("Name: " + coworkerInformation[1].getName());
