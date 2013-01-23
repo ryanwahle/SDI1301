@@ -45,6 +45,17 @@ var setupCoworkersObject = function (json) {
 		return false;
 	};
 
+	// Method: Function
+	var numberOfDaysWorked = function () {
+		var numOfDays = 0;
+	
+		for (var i = 0; i < this.workdays.length; i++) {
+			numOfDays++;
+		}
+
+		return numOfDays;
+	}
+
 	// Method: Accessor
 	var getName = function () {
 		return this.name;
@@ -73,8 +84,9 @@ var setupCoworkersObject = function (json) {
 			"workdays": worker.workdays,
 			"isHappy" : worker.isHappy,
 
-			"printDaysWorked": printDaysWorked,
-			"doesWorkThisDay": doesWorkThisDay,
+			"printDaysWorked"	: printDaysWorked,
+			"doesWorkThisDay"	: doesWorkThisDay,
+			"numberOfDaysWorked"	: numberOfDaysWorked,
 
 			"getName"	: getName,
 			"setRank"	: setRank,
@@ -104,3 +116,6 @@ console.log("New Rank: " + coworkerInformation[1].ranking);
 
 // Set isHappy
 coworkerInformation[1].setIsHappy(true);
+
+// Number of days worked
+console.log("Number days worked this week: " + coworkerInformation[1].numberOfDaysWorked());
