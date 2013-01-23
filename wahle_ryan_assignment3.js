@@ -57,6 +57,12 @@ var setupCoworkersObject = function (json) {
 		}	
 	}
 	
+	var setIsHappy = function (yesno) {
+		if (yesno == true || yesno == false) {
+			this.isHappy = yesno;
+		}
+	}
+
 	// Setup Object
 	for (var i = 0; i < json.workers.length; i++) {
 		var worker = json.workers[i];
@@ -70,8 +76,9 @@ var setupCoworkersObject = function (json) {
 			"printDaysWorked": printDaysWorked,
 			"doesWorkThisDay": doesWorkThisDay,
 
-			"getName"	 : getName,
-			"setRank"	 : setRank
+			"getName"	: getName,
+			"setRank"	: setRank,
+			"setIsHappy"	: setIsHappy 
 		};
 
 		tempCoworkerInfo.push(tempObject);	
@@ -95,3 +102,5 @@ console.log("Old Rank: " + coworkerInformation[1].ranking);
 coworkerInformation[1].setRank(20);
 console.log("New Rank: " + coworkerInformation[1].ranking);
 
+// Set isHappy
+coworkerInformation[1].setIsHappy(true);
