@@ -4,5 +4,9 @@
 // Project 3
 // Showing up to work late
 
-// Setup some variables
+// Global Variables
+var name = "Ryan";
+var numberMinutesLate = 30;
+var coworkerInformation = json;
+
 
