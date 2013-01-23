@@ -26,6 +26,24 @@ var setupCoworkersObject = function (json) {
 		console.log(string);
 	};
 
+	var doesWorkThisDay = function (stringDay) {
+		for (var i = 0; i < this.workdays.length; i++) {
+			// First verify this is a work day
+			if (stringDay == "Monday" || stringDay == "Tuesday" ||
+				stringDay == "Wednesday" || stringDay == "Thursday" ||	
+				stringDay == "Friday")
+			{
+				// Yes it is a work day!
+				if (stringDay == this.workdays[i]) {
+					return true;
+				} else {
+					return false;
+				}
+			} else {
+				return false;	
+			}
+		}
+	};
 
 
 	for (var i = 0; i < json.workers.length; i++) {
@@ -37,8 +55,8 @@ var setupCoworkersObject = function (json) {
 			"workdays": worker.workdays,
 			"isHappy" : worker.isHappy,
 
-			"printDaysWorked": printDaysWorked
-
+			"printDaysWorked": printDaysWorked,
+			"doesWorkThisDay": doesWorkThisDay
 		};
 
 		tempCoworkerInfo.push(tempObject);	
@@ -51,6 +69,6 @@ var setupCoworkersObject = function (json) {
 // Call function to setup coworker objects
 coworkerInformation = setupCoworkersObject(json);
 
-coworkerInformation[1].printDaysWorked();
-
+// Does coworker work this day? 
+console.log(coworkerInformation[1].doesWorkThisDay("Wednesday"));
 
