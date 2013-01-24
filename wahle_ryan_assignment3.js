@@ -111,25 +111,42 @@ var getAllNames = function (coworkerArray) {
 	return tempNamesArray;
 }
 
+// Set the current coworker
+var setCurrentCoworker = function (coworkerObject) {
+	coworker = coworkerObject;
+}
+
 // Call function to setup coworker objects
 coworkerInformation = setupCoworkersObject(json);
 
-// Does coworker work this day? 
-console.log(coworkerInformation[1].doesWorkThisDay("Thursday"));
+// And the story begins!
+var coworker;
 
-// Get the name
-console.log("Name: " + coworkerInformation[1].getName());
+console.log("After " + name + " got fired for being " + numberMinutesLate + " minutes late, all employees details have been looked over completely."); 
+console.log("The boss will only call in a few of the co-workers (" + getAllNames(coworkerInformation) + ") that he feels need to be counseled.");
 
-// Set new rank
-console.log("Old Rank: " + coworkerInformation[1].ranking);
-coworkerInformation[1].setRank(20);
-console.log("New Rank: " + coworkerInformation[1].ranking);
+setCurrentCoworker(coworkerInformation[1]);
+console.log(coworker.getName() + " gets called up first.");
+console.log("The boss asks what days do you work and they respond with: ");
+coworker.printDaysWorked();
+console.log("So you only work " + coworker.numberOfDaysWorked() + " days correct? I don't think that is enough, and I am demoting you now!");
 
-// Set isHappy
-coworkerInformation[1].setIsHappy(true);
+var previousRank = coworker.ranking;
+coworker.setRank(3);
+console.log("Your previous rank was " + previousRank + " and you are now only at rank " + coworker.ranking + "!! :("); 
 
-// Number of days worked
-console.log("Number days worked this week: " + coworkerInformation[1].numberOfDaysWorked());
+coworker.setIsHappy(false);
+console.log("Your are now no longer happy with your employement!");
 
-// Print out all the names in the array
-console.log("Names: " + getAllNames(coworkerInformation));
+setCurrentCoworker(coworkerInformation[0]);
+console.log("");
+console.log("The boss now calls in " + coworker.name + " and asks if he works Monday's.");
+
+if (coworker.doesWorkThisDay("Monday") == true) {
+	console.log("Well, yes I do sir! Would you like me to start working Saturday's too?");
+} else {
+	console.log("No I don't, would you like to me to start?");
+}
+
+console.log("The boss says, no that will not be needed. You are already a great employee! Thank you for your hard work!");
+console.log("-- THE END --");
