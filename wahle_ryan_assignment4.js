@@ -6,7 +6,13 @@
 var mylib = wahleryanLibrary();
 
 if (mylib.isPhoneNumberFormatCorrect("916-752-4955")) { 
-	console.log("TRUE");
+	console.log("isPhoneNumberFormatCorrect: TRUE");
 } else {
-	console.log("FALSE");
+	console.log("isPhoneNumberFormatCorrect: FALSE");
+}
+
+if (mylib.isURL("http://blah")) {
+	console.log("isURL: TRUE");
+} else {
+	console.log("isURL: FALSE");
 }

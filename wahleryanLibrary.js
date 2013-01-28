@@ -27,11 +27,35 @@ var wahleryanLibrary = function ()
 			}
 		}
 
-		// If nothing returns true, then return false;
+		// If nothing returns true, then return false
+		return false;
+	}
+
+	// Is the string a URL? (Does it start with http: or https:?)
+	var isURL = function (url)
+	{
+		// Lets first check if it's https or not
+		var secureChar = url.charAt(4);
+		if (secureChar.toLowerCase() == "s") {
+			// OK so, there was an 's' but is it really 'https:'
+			var urlProtocol = url.substring(0, 6);
+			if (urlProtocol.toLowerCase() == "https:") {
+				return true;
+			}
+		} else {
+			// Is it really 'http:'
+			var urlProtocol = url.substring(0, 5);
+			if (urlProtocol.toLowerCase() == "http:") {
+				return true;
+			}
+		}
+
+		// If nothing returns true, then return false
 		return false;
 	}
 
 	return {
-		isPhoneNumberFormatCorrect: isPhoneNumberFormatCorrect
+		"isPhoneNumberFormatCorrect": isPhoneNumberFormatCorrect,
+		"isURL": isURL
 	}
 }
