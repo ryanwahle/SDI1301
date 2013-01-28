@@ -54,8 +54,17 @@ var wahleryanLibrary = function ()
 		return false;
 	}
 
+	// Find the number of hours or days difference between two dates
+	var hoursBetweenDates = function (startDate, endDate)
+	{
+		var hours = (endDate.getTime() - startDate.getTime()) / 3600000;	
+		return hours;
+	}
+
 	return {
 		"isPhoneNumberFormatCorrect": isPhoneNumberFormatCorrect,
-		"isURL": isURL
+		"isURL": isURL,
+
+		"hoursBetweenDates": hoursBetweenDates
 	}
 }
