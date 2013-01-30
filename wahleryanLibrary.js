@@ -78,6 +78,12 @@ var wahleryanLibrary = function ()
 		} 
 	}
 
+	// Given a string version of a number such as "42", return the value as an actual Number, such as 42.
+	var stringToNumber = function(string)
+	{
+		return Number(string);
+	}
+
 	return {
 		"isPhoneNumberFormatCorrect": isPhoneNumberFormatCorrect,
 		"isURL": isURL,
@@ -85,5 +91,6 @@ var wahleryanLibrary = function ()
 		"hoursBetweenDates": hoursBetweenDates,
 
 		"fuzzyMatchNumber": fuzzyMatchNumber,
+		"stringToNumber": stringToNumber
 	}
 }

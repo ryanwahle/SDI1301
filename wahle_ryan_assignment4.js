@@ -45,5 +45,15 @@ console.log(mylib.hoursBetweenDates(startDate, endDate));
 
 console.log(mylib.fuzzyMatchNumber(124, 100, 25));
 
+//
+// stringToNumber
+//
 
+var object = mylib.stringToNumber("25");
+
+if (object === 25) {
+	console.log("A Number Object. Good");
+} else {
+	console.log("Something else. Bad");
+}
 
