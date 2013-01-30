@@ -57,6 +57,8 @@ var wahleryanLibrary = function ()
 	// Find the number of hours or days difference between two dates
 	var hoursBetweenDates = function (startDate, endDate)
 	{
+		// .getTime returns time in milliseconds
+		// 3600000 milliseconds = 1 hour
 		var hours = (endDate.getTime() - startDate.getTime()) / 3600000;	
 		return hours;
 	}
@@ -81,16 +83,48 @@ var wahleryanLibrary = function ()
 	// Given a string version of a number such as "42", return the value as an actual Number, such as 42.
 	var stringToNumber = function(string)
 	{
+		// Convert to Number object 
 		return Number(string);
 	}
 
-	var numberToDollarFormat = function (number) {
+	var numberToDollarFormat = function (number) 
+	{
+		// Return a number that always has two decimal point numbers
 		return Number(number).toFixed(2);
 	}
 
+	var upperCaseSeperateWords = function (string) 
+	{
+		var newString = "";
+
+		// Split the string
+		var arrayOfWords = string.split(" ");
+
+		for (var i = 0; i < arrayOfWords.length; i++) {
+			// Just upper case the first letter
+			var firstLetter = arrayOfWords[i].substring(0,1);
+			firstLetter = firstLetter.toUpperCase();
+
+			// Get the rest of the string
+			var restOfString;
+			if (arrayOfWords[i].length > 1) {
+				restOfString = arrayOfWords[i].substring(1, arrayOfWords[i].length);
+			} else {
+				restOfString = "";
+			}
+		
+			newString = newString + " " + firstLetter + restOfString;
+		}
+
+		// Shave off the first " " and return the string
+		return newString.substring(1, newString.length);
+	}
+
+
 	return {
-		"isPhoneNumberFormatCorrect": isPhoneNumberFormatCorrect,
-		"isURL": isURL,
+		"isPhoneNumberFormatCorrect": 	isPhoneNumberFormatCorrect,
+		"isURL": 			isURL,
+		"upperCaseSeperateWords": 	upperCaseSeperateWords,
 
 		"hoursBetweenDates": 	hoursBetweenDates,
 		"fuzzyMatchNumber": 	fuzzyMatchNumber,

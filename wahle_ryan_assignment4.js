@@ -62,3 +62,10 @@ if (object === 25) {
 //
 
 console.log("$" + mylib.numberToDollarFormat(25));
+
+//
+// upperCaseSeperateWords
+//
+
+var myString = mylib.upperCaseSeperateWords("Hi this is Ryan. Have a good day!");
+console.log("'" + myString + "'");
