@@ -57,3 +57,8 @@ if (object === 25) {
 	console.log("Something else. Bad");
 }
 
+//
+// numberToDollarFormat
+//
+
+console.log("$" + mylib.numberToDollarFormat(25));

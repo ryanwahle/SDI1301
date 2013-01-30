@@ -84,13 +84,17 @@ var wahleryanLibrary = function ()
 		return Number(string);
 	}
 
+	var numberToDollarFormat = function (number) {
+		return Number(number).toFixed(2);
+	}
+
 	return {
 		"isPhoneNumberFormatCorrect": isPhoneNumberFormatCorrect,
 		"isURL": isURL,
 
-		"hoursBetweenDates": hoursBetweenDates,
-
-		"fuzzyMatchNumber": fuzzyMatchNumber,
-		"stringToNumber": stringToNumber
+		"hoursBetweenDates": 	hoursBetweenDates,
+		"fuzzyMatchNumber": 	fuzzyMatchNumber,
+		"stringToNumber": 	stringToNumber,
+		"numberToDollarFormat": numberToDollarFormat
 	}
 }
