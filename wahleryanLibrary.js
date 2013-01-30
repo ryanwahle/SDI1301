@@ -61,10 +61,29 @@ var wahleryanLibrary = function ()
 		return hours;
 	}
 
+	// Fuzzy-match a number: is the number above or below a number within a certain percent?
+	var fuzzyMatchNumber = function(numberToCheck, number, leewayPercentage)
+	{
+		// Get the amount of leeway
+		var leewayNumber = number * (leewayPercentage * 0.01);
+		
+		// Set min and max numbers and check if in between
+		var minNumber = number - leewayNumber;
+		var maxNumber = number + leewayNumber;
+
+		if ( (numberToCheck >= minNumber) && (numberToCheck <= maxNumber) ) {
+			return true;
+		} else {
+			return false;
+		} 
+	}
+
 	return {
 		"isPhoneNumberFormatCorrect": isPhoneNumberFormatCorrect,
 		"isURL": isURL,
 
-		"hoursBetweenDates": hoursBetweenDates
+		"hoursBetweenDates": hoursBetweenDates,
+
+		"fuzzyMatchNumber": fuzzyMatchNumber,
 	}
 }

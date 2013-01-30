@@ -37,3 +37,13 @@ startDate.setMinutes(30);
 endDate.setHours(2);
 
 console.log(mylib.hoursBetweenDates(startDate, endDate));
+
+
+//
+// fuzzyMatchNumber
+//
+
+console.log(mylib.fuzzyMatchNumber(124, 100, 25));
+
+
+
