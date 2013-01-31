@@ -1,7 +1,7 @@
 // Ryan Wahle
 // SDI 1301
 // Project 4
-// XX January, 2013
+// 30 January, 2013
 
 var mylib = wahleryanLibrary();
 
